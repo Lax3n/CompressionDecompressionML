@@ -26,9 +26,9 @@ This repository contains a neural network-based autoencoder project that compres
 ### Screenshots
 
 - ![Latent Space Clusters](img/2D_Visualization_of_number.png) The 2D latent space showing how different digits cluster in the compressed representation.
-- ![Original vs Reconstructed](img\comparaison\compression_visualization.png) Comparison between original MNIST digits (top) and their reconstructions (bottom) after compression.
-- ![3D Density Visualization](img\densityNumber\latent_space_density_3d_digit3.png) 3D density visualization showing the distribution of a specific digit in latent space.
-- ![Interactive Explorer](img\interact_decompression.png) The interactive latent space explorer allowing real-time digit generation.
+- ![Original vs Reconstructed](img/comparaison/compression_visualization.png) Comparison between original MNIST digits (top) and their reconstructions (bottom) after compression.
+- ![3D Density Visualization](img/densityNumber/latent_space_density_3d_digit3.png) 3D density visualization showing the distribution of a specific digit in latent space.
+- ![Interactive Explorer](img/interact_decompression.png) The interactive latent space explorer allowing real-time digit generation.
 
 ### Requirements
 
@@ -90,9 +90,9 @@ Ce dépôt contient un projet d'auto-encodeur basé sur un réseau de neurones q
 ### Captures d'écran
 
 - ![Espace Latent 2D](img/2D_Visualization_of_number.png) L'espace latent 2D montrant comment différents chiffres se regroupent dans la représentation compressée.
-- ![Comparaison Original/Reconstruction](img\comparaison\compression_visualization.png) Comparaison entre les chiffres MNIST originaux (en haut) et leurs reconstructions (en bas) après compression.
-- ![Visualisation 3D](img\densityNumber\latent_space_density_3d_digit3.png) Visualisation de densité 3D montrant la distribution d'un chiffre spécifique dans l'espace latent.
-- ![Explorateur Interactif](img\interact_decompression.png) L'explorateur d'espace latent interactif permettant la génération de chiffres en temps réel.
+- ![Comparaison Original/Reconstruction](img/comparaison/compression_visualization.png) Comparaison entre les chiffres MNIST originaux (en haut) et leurs reconstructions (en bas) après compression.
+- ![Visualisation 3D](img/densityNumber/latent_space_density_3d_digit3.png) Visualisation de densité 3D montrant la distribution d'un chiffre spécifique dans l'espace latent.
+- ![Explorateur Interactif](img/interact_decompression.png) L'explorateur d'espace latent interactif permettant la génération de chiffres en temps réel.
 
 ### Caractéristiques
 
