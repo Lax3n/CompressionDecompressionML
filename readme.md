@@ -8,10 +8,10 @@ Autoencodeur MNIST → espace latent **2D** (compression 392×). Le projet exist
 
 | Implémentation | Architecture | Params | Test MSE | Temps pour battre PyTorch |
 |---|---|---|---|---|
-| **PyTorch** (référence) | MLP + BatchNorm | 1.16M | 0.03088 | — (entraîné 600 epochs) |
-| **MLX β-VAE** | MLP asymétrique + LayerNorm | 6.8M | **0.02907** (-5.9 %) | **49s / 270 epochs** |
+| **PyTorch** (référence) | MLP + BatchNorm | 1.16M | 0.030877 | — (entraîné 600 epochs) |
+| **MLX β-VAE** | MLP asymétrique + LayerNorm | 6.8M | **0.029069** (**-5.86 %**) | **49 s / 270 epochs** (min atteint à E1167) |
 
-Mesures sur Mac M5 Max, 64 Go de RAM unifiée, MLX 0.31 (Metal).
+Mesures sur Mac M5 Max, 64 Go de RAM unifiée, MLX 0.31 (Metal). Le min MLX (0.029069) est mesuré sur les 10 000 images du jeu de test MNIST avec encodage déterministe (`z = μ`, sans échantillonnage). Au-delà de E1167 le modèle commence à overfitter — l'early stopping est intégré via la sauvegarde conditionnelle au best.
 
 ---
 
@@ -89,10 +89,10 @@ These are the patterns that actually worked (others were tried and rejected):
 
 | Variant | Result |
 |---|---|
-| MLP + MSE | 0.0294 (good baseline) |
-| MLP + BCE loss | 0.0301 (slightly worse) |
+| MLP + MSE | 0.02937 (solid baseline) |
+| MLP + BCE loss | 0.03006 (slightly worse) |
 | Conv with FiLM injection | ~0.035 (mode collapse hard to control) |
-| **β-VAE asymmetric MLP** | **0.0291** ← best |
+| **β-VAE asymmetric MLP** | **0.029069** ← best |
 | Denoising VAE (noise=0.15) | 0.0302 (noise too aggressive) |
 | MSE + SSIM (50/50) | 0.031 (SSIM hurts pure MSE) |
 | bf16 mixed precision | 0.0316 (Adam loses precision on small gradients) |
@@ -177,10 +177,10 @@ Voici les choix qui ont vraiment fait converger le modèle (les autres ont été
 
 | Variante | Résultat |
 |---|---|
-| MLP + MSE | 0.0294 (bonne baseline) |
-| MLP + BCE | 0.0301 (légèrement moins bon) |
+| MLP + MSE | 0.02937 (bonne baseline) |
+| MLP + BCE | 0.03006 (légèrement moins bon) |
 | Conv avec injection FiLM | ~0.035 (mode collapse difficile à dompter) |
-| **β-VAE MLP asymétrique** | **0.0291** ← meilleur |
+| **β-VAE MLP asymétrique** | **0.029069** ← meilleur |
 | Denoising VAE (noise=0.15) | 0.0302 (bruit trop agressif) |
 | MSE + SSIM (50/50) | 0.031 (SSIM nuit à la MSE pure) |
 | Précision bf16 | 0.0316 (Adam perd en précision sur les petits gradients) |
