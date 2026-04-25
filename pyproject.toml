@@ -1,0 +1,17 @@
+[project]
+name = "compression-decompression-ml"
+version = "0.1.0"
+description = "Autoencoder MNIST: PyTorch baseline vs MLX challenger"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "torch>=2.4",
+    "torchvision>=0.19",
+    "mlx>=0.20",
+    "mlx-data>=0.0.2",
+]
+
+[tool.uv]
+package = false
